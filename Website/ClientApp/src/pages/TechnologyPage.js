@@ -129,28 +129,34 @@ export const TechnologyPage = () => {
     }
   ];
 
-  const [isTablet, setIsTablet] = useState(window.matchMedia("(min-width:961px)").matches);
+  const [isTabletPortrait, setIsTabletPortrait] = useState(window.matchMedia("(min-width:641px)").matches);
+  const [isTabletLandscape, setIsTabletLandscape] = useState(window.matchMedia("(min-width:961px)").matches);
   const [isDesktop, setIsDesktop] = useState(window.matchMedia("(min-width:1025px)").matches);
 
   useEffect(() => {
     
-    const isTabletHandler = (e) => setIsTablet(e.matches);
+    const isTabletPortraitHandler = (e) => setIsTabletPortrait(e.matches);
+    const isTabletLandscapeHandler = (e) => setIsTabletLandscape(e.matches);
     const isDesktopHandler = (e) => setIsDesktop(e.matches);
 
-    window.matchMedia("(min-width:961px)").addListener(isTabletHandler);
+    window.matchMedia("(min-width:641px").addListener(isTabletPortraitHandler);
+    window.matchMedia("(min-width:961px)").addListener(isTabletLandscapeHandler);
     window.matchMedia("(min-width:1025px)").addListener(isDesktopHandler);
 
     return () => {
-      window.matchMedia("(min-width:961px)").removeListener(isTabletHandler);
+      window.matchMedia("(min-width:641px").removeListener(isTabletPortraitHandler);
+      window.matchMedia("(min-width:961px)").removeListener(isTabletLandscapeHandler);
       window.matchMedia("(min-width:1025px)").removeListener(isDesktopHandler);
     }
   });
 
   const groupSize = (isDesktop) 
     ? 6
-    : (isTablet)
+    : (isTabletLandscape)
       ? 3
-      : 1;
+      : (isTabletPortrait)
+        ? 2
+        : 1;
 
   return (
     <>

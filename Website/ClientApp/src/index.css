@@ -41,3 +41,15 @@ code {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/Helvetica-Bold.eot');
+  src: url('./assets/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+       url('./assets/Helvetica-Bold.svg#Helvetica-Bold') format('svg'),
+       url('./assets/Helvetica-Bold.ttf') format('truetype'),
+       url('./assets/Helvetica-Bold.woff') format('woff'),
+       url('./assets/Helvetica-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}

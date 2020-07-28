@@ -50,3 +50,7 @@ ul {
 a { 
   color: white;
 }
+
+main {
+  flex: 1 1 auto;
+}
