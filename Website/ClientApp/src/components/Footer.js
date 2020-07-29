@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -41,7 +42,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <Container className="text-light p-3">
         <Row>
-          <Col as={Container} md={3}>
+          <Col as={Container} xs={6} lg={3}>
             <ul>
               {links.map((link, index) => (
                 <li key={index}>
@@ -52,7 +53,7 @@ export const Footer = () => {
               ))}
             </ul>
           </Col>
-          <Col as={Container} md={3} className={styles.footerFormCol}>
+          <Col as={Container} xs={6} lg={3} className={styles.footerFormCol}>
             <Form>
               <Form.Group controlId="" className={styles.footerFormGroup}>
                 <Form.Label>Choose Region:</Form.Label>
@@ -75,7 +76,7 @@ export const Footer = () => {
               </Form.Group>
             </Form>
           </Col>
-          <Col md={6} className={styles.footerFormCol}>
+          <Col xs={12} lg={6} className={styles.footerFormCol}>
             <Form onSubmit={handleSubmit(subscribe)}>
               <Form.Group controlId="" className={styles.footerFormGroup}>
                 <Form.Label>Sign up for CORAbot Emails</Form.Label>
@@ -104,7 +105,7 @@ export const Footer = () => {
             </Form>
           </Col>
         </Row>
-        <Row className="justify-content-center">
+        <Row className="px-5 justify-content-center">
           Copyright © 2020 CORAbot USA, All rights reserved.{" "}
           <Link to="/privacy">Terms of Use | Privacy Policy</Link>
         </Row>

@@ -29,3 +29,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/Helvetica.eot');
+  src: url('./assets/Helvetica.eot?#iefix') format('embedded-opentype'),
+       url('./assets/Helvetica.svg#Helvetica') format('svg'),
+       url('./assets/Helvetica.ttf') format('truetype'),
+       url('./assets/Helvetica.woff') format('woff'),
+       url('./assets/Helvetica.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/Helvetica-Bold.eot');
+  src: url('./assets/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+       url('./assets/Helvetica-Bold.svg#Helvetica-Bold') format('svg'),
+       url('./assets/Helvetica-Bold.ttf') format('truetype'),
+       url('./assets/Helvetica-Bold.woff') format('woff'),
+       url('./assets/Helvetica-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}

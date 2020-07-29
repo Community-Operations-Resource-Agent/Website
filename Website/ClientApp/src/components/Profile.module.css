@@ -1,5 +1,9 @@
-.info{
-    position: absolute;
-    left: 0;
-    width: 100vw;
+.info {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+}
+.profile {
+    width: 100px;
+    height: 100px;
 }

@@ -3,6 +3,10 @@
   width: auto;
 }
 
+.nav {
+  justify-content: flex-end;
+}
+
 .navLink {
   margin: 0.5em;
   text-transform: uppercase;

@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--color-secondary);
-  flex: auto;
+  flex: 0 0 auto;
   font-size: 12px;
 }
 
@@ -40,14 +40,27 @@ a:hover {
   margin-bottom: 0;
 }
 
+@media (min-width:320px) { /* Mobile */
+  .footerFormGroup {    
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:641px) { /* Tablets */
+  .footerFormGroup {
+    flex-wrap: nowrap;
+  }
+}
+
 .footerFormGroup > label {
   flex: 1 0 auto;
   margin-bottom: 0;
+  padding: 5px 0;
 }
 
 .footerFormGroup > div {
   flex: 1 1 auto;
-  padding: 0 5%;
+  padding: 5px 5%;
 }
 
 .footerFormGroup button,

@@ -68,8 +68,7 @@ const AlertAnon = ({ show, setShow }) => {
         <Alert.Heading>Attention</Alert.Heading>
         <p>
           Locations have been anonymized and are approximate. Read more in our
-          <Link to="/privacy"> Privacy Promise!</Link> Learn more in our{" "}
-          <Link to="/faq">FAQ's</Link>
+          <Link to="/privacy"> Privacy Promise!</Link>
         </p>
       </Alert>
     )

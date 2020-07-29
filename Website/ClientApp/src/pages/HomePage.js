@@ -32,7 +32,8 @@ export const HomePage = () => {
         </Row>
         <Row className={styles.hero}>
           <Col
-            className={`${styles.meetCora} ${styles.colText} p-0 d-flex flex-column justify-content-center`}
+            className={`${styles.meetCora} ${styles.colText} d-none d-lg-flex p-0 flex-column justify-content-center`}
+            lg={6}
           >
             <Container>
               <h2>
@@ -45,12 +46,36 @@ export const HomePage = () => {
               </p>
             </Container>
           </Col>
-          <Col className={`${styles.colImageWrapper} p-0 h-100 w-100`} style={{'backgroundImage': `url('${jorge}')`}}>
+          <Col 
+            className={`${styles.colImageWrapper} d-none d-lg-block p-0 h-100 w-100`}
+            style={{'backgroundImage': `url('${jorge}')`}}
+            lg={6}
+          >
             <Image className={styles.colImage} src={jorge} />
+          </Col>
+          <Col
+            className={`${styles.colText} ${styles.colImageWrapper} p-0 d-flex d-lg-none flex-column justify-content-center`}
+            style={{'backgroundImage': `url('${jorge}')`}}
+            xs={12}
+          >
+            <Container>
+                <h2>
+                  Learn how CORAbot can be customized for any cause.
+                </h2>
+                <p>
+                  <Button as={Link} to="/studies" variant="primary">
+                    Learn More
+                  </Button>
+                </p>
+              </Container>
           </Col>
         </Row>
         <Row className={styles.hero}>
-          <Col className="p-0 h-100">
+          <Col 
+            className="p-0 h-100"
+            xs={{ span: 12, order: "last" }}
+            lg={6}
+          >
             <Image className={styles.colImage} src={mapImage} />
           </Col>
           <Col
@@ -58,6 +83,8 @@ export const HomePage = () => {
             style={{
               'backgroundImage': `url(${symbol})`
             }}
+            xs={12}
+            lg={6}
           >
             <Container>
               <h2>

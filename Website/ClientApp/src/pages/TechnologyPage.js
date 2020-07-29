@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,8 +12,61 @@ import styles from "./TechnologyPage.module.css";
 
 export const TechnologyPage = () => {
 
-  const [activeIndex, setIndex] = useState(-1);
-  const [open, setOpen] = useState(false);
+  const StackRow = ({ stack }) => {
+    const [activeIndex, setIndex] = useState(-1);
+    const [open, setOpen] = useState(false);
+
+    return (
+      <>
+        <Row className={styles.stackRow}>
+          {stack.map((element, index) => (
+            <Col 
+              key={index} 
+              onClick={() => {
+                if (activeIndex === index) {
+                  setOpen(false);
+                } else if (activeIndex === -1) {
+                  setIndex(index);
+                  setOpen(true);
+                } else {
+                  setOpen(false);
+                  new Promise(resolve => setTimeout(resolve, 600)).then(() => {
+                    setIndex(index);
+                    setOpen(true);
+                  });
+                }
+              }}
+            >
+              <span className={styles.stackIcon} style={{'background': element.color}}>
+                {element.icon}
+              </span>
+              <div className={styles.stackName}>
+                {element.name}
+              </div>
+            </Col>
+          ))}
+        </Row>
+        <Collapse 
+          in={open}
+          onExited={() => setIndex(-1)}
+        >
+          <div>
+            <div className={styles.collapsibleWrapper}>
+              <span className={styles.stackIcon} style={{'background': stack[Math.max(activeIndex, 0)].color}}>
+                {stack[Math.max(activeIndex, 0)].icon}
+              </span>
+              <div className={styles.stackName}>
+                {stack[Math.max(activeIndex, 0)].name}
+              </div>
+              <div>
+                {stack[Math.max(activeIndex, 0)].description}
+              </div>
+            </div>
+          </div>
+        </Collapse>  
+      </>  
+    );
+  };
 
   // icons from icons8, not final
   const stack = [
@@ -76,6 +129,35 @@ export const TechnologyPage = () => {
     }
   ];
 
+  const [isTabletPortrait, setIsTabletPortrait] = useState(window.matchMedia("(min-width:641px)").matches);
+  const [isTabletLandscape, setIsTabletLandscape] = useState(window.matchMedia("(min-width:961px)").matches);
+  const [isDesktop, setIsDesktop] = useState(window.matchMedia("(min-width:1025px)").matches);
+
+  useEffect(() => {
+    
+    const isTabletPortraitHandler = (e) => setIsTabletPortrait(e.matches);
+    const isTabletLandscapeHandler = (e) => setIsTabletLandscape(e.matches);
+    const isDesktopHandler = (e) => setIsDesktop(e.matches);
+
+    window.matchMedia("(min-width:641px").addListener(isTabletPortraitHandler);
+    window.matchMedia("(min-width:961px)").addListener(isTabletLandscapeHandler);
+    window.matchMedia("(min-width:1025px)").addListener(isDesktopHandler);
+
+    return () => {
+      window.matchMedia("(min-width:641px").removeListener(isTabletPortraitHandler);
+      window.matchMedia("(min-width:961px)").removeListener(isTabletLandscapeHandler);
+      window.matchMedia("(min-width:1025px)").removeListener(isDesktopHandler);
+    }
+  });
+
+  const groupSize = (isDesktop) 
+    ? 6
+    : (isTabletLandscape)
+      ? 3
+      : (isTabletPortrait)
+        ? 2
+        : 1;
+
   return (
     <>
       <AppBar></AppBar>
@@ -89,52 +171,20 @@ export const TechnologyPage = () => {
         invert
       />
       <Container fluid as="main">
-        <Row className={styles.stackRow}>
-          {stack.map((element, index) => (
-            <Col 
-              key={index} 
-              onClick={() => {
-                if (activeIndex === index) {
-                  setOpen(false);
-                } else if (activeIndex === -1) {
-                  setIndex(index);
-                  setOpen(true);
-                } else {
-                  setOpen(false);
-                  new Promise(resolve => setTimeout(resolve, 600)).then(() => {
-                    setIndex(index);
-                    setOpen(true);
-                  });
-                }
-              }}
-            >
-              <span className={styles.stackIcon} style={{'background': element.color}}>
-                {element.icon}
-              </span>
-              <div className={styles.stackName}>
-                {element.name}
-              </div>
-            </Col>
-          ))}
-        </Row>
-        <Collapse 
-          in={open}
-          onExited={() => setIndex(-1)}
-        >
-          <div>
-            <div className={styles.collapsibleWrapper}>
-              <span className={styles.stackIcon} style={{'background': stack[Math.max(activeIndex, 0)].color}}>
-                {stack[Math.max(activeIndex, 0)].icon}
-              </span>
-              <div className={styles.stackName}>
-                {stack[Math.max(activeIndex, 0)].name}
-              </div>
-              <div>
-                {stack[Math.max(activeIndex, 0)].description}
-              </div>
-            </div>
-          </div>
-        </Collapse>
+        {stack
+          .reduce((r, item, index) => {
+            // create element groups with size of groupSize, result looks like:
+            // [[elem1, elem2, elem3], [elem4, elem5, elem6], ...]
+            if (index % groupSize === 0) {
+              r.push([]);
+            }
+            r[r.length - 1].push(item);
+    
+            return r;
+          }, [])
+          .map((row, index) => {
+            return <StackRow stack={row} key={index} />;
+          })}
       </Container>
       <Footer></Footer>
     </>

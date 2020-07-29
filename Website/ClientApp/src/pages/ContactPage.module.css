@@ -17,6 +17,26 @@
   opacity: 0;
 }
 
+@media (min-width:320px) {
+  .colImage {
+    height: 35vh;
+  }
+
+  .form > div:nth-child(2) {
+    padding: 0 10% 10% 10% !important;
+  }
+}
+
+@media (min-width:1200px)  {
+  .colImage {
+    height: 100%;
+  }
+  
+  .form > div:nth-child(2) {
+    padding: 3rem !important;
+  }
+}
+
 .colFormHeader {
   font-weight: bold;
   color: white;

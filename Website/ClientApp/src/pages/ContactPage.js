@@ -40,12 +40,12 @@ export const ContactPage = () => {
            * Inner image sets height
            * Actual filter color TBD
            */}
-          <Col sm={0} md={6} lg={6} className={styles.colImageWrapper} style={{
+          <Col sm={12} xl={6} className={styles.colImageWrapper} style={{
             'backgroundImage': `url(${crowdImage})`
           }}>
             <Image className={styles.colImage} src={crowdImage}/>
           </Col>
-          <Col sm={12} md={6} lg={6} className={` p-5`}>
+          <Col sm={12} xl={6} className={` p-5`}>
             <h2 className={styles.colFormHeader}>Contact Us</h2>
             <Form onSubmit={handleSubmit(contact)}>
               <Form.Group controlId="firstName">
