@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -32,33 +31,31 @@ export const Footer = () => {
   };
 
   const links = [
-    { to: '/', text: 'About CORAbot' },
-    { to: '/', text: 'Hack For COVID-19' },
-    { to: '/', text: 'Hack For Good' },
-    { to: '/', text: 'Contact Us' }
-  ]
+    { to: "/", text: "About CORAbot" },
+    { to: "/", text: "Hack For COVID-19" },
+    { to: "/", text: "Hack For Good" },
+    { to: "/", text: "Contact Us" },
+  ];
 
   return (
     <footer className={styles.footer}>
-      <Container className="text-light p-3">
+      <Container className='text-light p-3'>
         <Row>
           <Col as={Container} xs={6} lg={3}>
             <ul>
               {links.map((link, index) => (
                 <li key={index}>
-                  <Link to={link.to}>
-                    {link.text}
-                  </Link>
+                  <Link to={link.to}>{link.text}</Link>
                 </li>
               ))}
             </ul>
           </Col>
           <Col as={Container} xs={6} lg={3} className={styles.footerFormCol}>
             <Form>
-              <Form.Group controlId="" className={styles.footerFormGroup}>
+              <Form.Group controlId='' className={styles.footerFormGroup}>
                 <Form.Label>Choose Region:</Form.Label>
                 <Dropdown>
-                  <Dropdown.Toggle id="dropdown-basic">
+                  <Dropdown.Toggle id='dropdown-basic'>
                     {region}
                   </Dropdown.Toggle>
                   <Dropdown.Menu className={styles.footerFormDropdown}>
@@ -78,17 +75,17 @@ export const Footer = () => {
           </Col>
           <Col xs={12} lg={6} className={styles.footerFormCol}>
             <Form onSubmit={handleSubmit(subscribe)}>
-              <Form.Group controlId="" className={styles.footerFormGroup}>
+              <Form.Group controlId='' className={styles.footerFormGroup}>
                 <Form.Label>Sign up for CORAbot Emails</Form.Label>
-                <InputGroup className="mr-sm-2">
+                <InputGroup className='mr-sm-2'>
                   <Form.Control
                     ref={register({ required: true, minLength: 1 })}
-                    name="Email"
-                    type="email"
-                    placeholder="Email"
+                    name='Email'
+                    type='email'
+                    placeholder='Email'
                   />
                   <InputGroup.Append>
-                    <Button type="submit">{">"}</Button>
+                    <Button type='submit'>{">"}</Button>
                   </InputGroup.Append>
                 </InputGroup>
                 {errors.email && <span>This field is required</span>}
@@ -97,17 +94,17 @@ export const Footer = () => {
                 )}
                 {subscribedFail && (
                   <span>
-                    Sorry something went wrong we were unable to add you to
-                    our mailing list
+                    Sorry something went wrong we were unable to add you to our
+                    mailing list
                   </span>
                 )}
               </Form.Group>
             </Form>
           </Col>
         </Row>
-        <Row className="px-5 justify-content-center">
+        <Row className='px-5 justify-content-center'>
           Copyright © 2020 CORAbot USA, All rights reserved.{" "}
-          <Link to="/privacy">Terms of Use | Privacy Policy</Link>
+          <Link to='/privacy'>Terms of Use | Privacy Policy</Link>
         </Row>
       </Container>
     </footer>

@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
-import { AppBar } from "../components/AppBar";
-import { Footer } from "../components/Footer";
-import { MinimizeWebChat } from "../components/Webchat";
-import styles from "./ContactPage.module.css";
+import Row from "react-bootstrap/Row";
 import { useForm } from "react-hook-form";
 import crowdImage from "../assets/crowd.png";
-
+import { AppBar } from "../components/AppBar";
+import { Footer } from "../components/Footer";
+import styles from "./ContactPage.module.css";
 
 export const ContactPage = () => {
   const [contactSuccess, setContactSuccess] = useState(false);
@@ -33,55 +31,59 @@ export const ContactPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as="main">
-        <Row as="section" className={`${styles.form} backgroundSecondary`}>
-          {/* 
+      <Container fluid as='main'>
+        <Row as='section' className={`${styles.form} backgroundSecondary`}>
+          {/*
            * Sets the div bg and adds blue color filter
            * Inner image sets height
            * Actual filter color TBD
            */}
-          <Col sm={12} xl={6} className={styles.colImageWrapper} style={{
-            'backgroundImage': `url(${crowdImage})`
-          }}>
-            <Image className={styles.colImage} src={crowdImage}/>
+          <Col
+            sm={12}
+            xl={6}
+            className={styles.colImageWrapper}
+            style={{
+              backgroundImage: `url(${crowdImage})`,
+            }}>
+            <Image className={styles.colImage} src={crowdImage} />
           </Col>
           <Col sm={12} xl={6} className={` p-5`}>
             <h2 className={styles.colFormHeader}>Contact Us</h2>
             <Form onSubmit={handleSubmit(contact)}>
-              <Form.Group controlId="firstName">
+              <Form.Group controlId='firstName'>
                 <Form.Control
-                  name="FirstName"
+                  name='FirstName'
                   ref={register({ required: true, minLength: 1 })}
-                  type="text"
-                  placeholder="First Name"
+                  type='text'
+                  placeholder='First Name'
                 />
               </Form.Group>
-              <Form.Group controlId="lastName">
+              <Form.Group controlId='lastName'>
                 <Form.Control
-                  name="LastName"
+                  name='LastName'
                   ref={register({ required: true, minLength: 1 })}
-                  type="text"
-                  placeholder="Last Name"
+                  type='text'
+                  placeholder='Last Name'
                 />
               </Form.Group>
-              <Form.Group controlId="email">
+              <Form.Group controlId='email'>
                 <Form.Control
-                  name="Email"
+                  name='Email'
                   ref={register({ required: true, minLength: 1 })}
-                  type="email"
-                  placeholder="Email"
+                  type='email'
+                  placeholder='Email'
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId='formBasicEmail'>
                 <Form.Control
-                  name="Details"
+                  name='Details'
                   ref={register({ required: true, minLength: 1 })}
-                  as="textarea"
-                  rows="6"
-                  placeholder="Message"
+                  as='textarea'
+                  rows='6'
+                  placeholder='Message'
                 />
               </Form.Group>
-              <Button variant="primary" block type="submit">
+              <Button variant='primary' block type='submit'>
                 Send Message
               </Button>
               {contactSuccess && (
@@ -94,7 +96,6 @@ export const ContactPage = () => {
                 </span>
               )}
             </Form>
-            <MinimizeWebChat></MinimizeWebChat>
           </Col>
         </Row>
       </Container>
