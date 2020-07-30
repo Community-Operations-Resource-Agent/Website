@@ -1,80 +1,80 @@
 .footer {
-  background-color: var(--color-secondary);
-  flex: 0 0 auto;
-  font-size: 12px;
+    background-color: var(--color-secondary);
+    flex: 0 0 auto;
+    font-size: 12px;
 }
 
 ul {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 25%;
-  text-align: left;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 25%;
+    text-align: left;
 }
 
-ul li {
-  padding: 0.25rem 0;
-}
+    ul li {
+        padding: 0.25rem 0;
+    }
 
 a {
-  color: white;
+    color: white;
 }
 
-a:hover {
-  color: var(--color-primary);
-  text-decoration: none;
-}
+    a:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
 
 .footerFormCol {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-.footerFormCol form {
-  flex: 1 1 auto;
-}
+    .footerFormCol form {
+        flex: 1 1 auto;
+    }
 
 .footerFormGroup {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
 }
 
 @media (min-width:320px) { /* Mobile */
-  .footerFormGroup {    
-    flex-wrap: wrap;
-  }
+    .footerFormGroup {
+        flex-wrap: wrap;
+    }
 }
 
 @media (min-width:641px) { /* Tablets */
-  .footerFormGroup {
-    flex-wrap: nowrap;
-  }
+    .footerFormGroup {
+        flex-wrap: nowrap;
+    }
 }
 
 .footerFormGroup > label {
-  flex: 1 0 auto;
-  margin-bottom: 0;
-  padding: 5px 0;
+    flex: 1 0 auto;
+    margin-bottom: 0;
+    padding: 5px 0;
 }
 
 .footerFormGroup > div {
-  flex: 1 1 auto;
-  padding: 5px 5%;
+    flex: 1 1 auto;
+    padding: 5px 5%;
 }
 
 .footerFormGroup button,
 .footerFormGroup input {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .footerFormDropdown {
-  min-width: 10em;
-  padding: 0.5em 0;
-  font-size: 1em;
-  border-radius: 0.25em;
+    min-width: 10em;
+    padding: 0.5em 0;
+    font-size: 1em;
+    border-radius: 0.25em;
 }
 
-.footerFormDropdown .dropdown-item {
-  padding: 0.25em 1.5em;
-}
+    .footerFormDropdown .dropdown-item {
+        padding: 0.25em 1.5em;
+    }

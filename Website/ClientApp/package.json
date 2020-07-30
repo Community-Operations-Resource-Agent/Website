@@ -19,6 +19,7 @@
   "devDependencies": {
     "ajv": "^6.12.3",
     "cross-env": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "nan": "^2.14.1",
     "typescript": "^3.9.7"
   },

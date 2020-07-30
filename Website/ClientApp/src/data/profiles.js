@@ -1,22 +1,22 @@
-import jonathan from "../assets/profiles/joBROW.jfif";
-import sherri from "../assets/profiles/sherri.jfif";
-import peter from "../assets/profiles/Peter.jfif";
-import mike from "../assets/profiles/Mike.jfif";
-import diya from "../assets/profiles/diya.jpg";
-import camelia from "../assets/profiles/Camelia_Betancourt.jpeg";
-import rachael from "../assets/profiles/Rachael_Dier.jpeg";
-import gaspard from "../assets/profiles/Gaspard_Etienne .jpeg";
-import kari from "../assets/profiles/Kari_Everson.jpeg";
-import savannah from "../assets/profiles/SavannahMajarwitz.PNG";
-import michael from "../assets/profiles/ichael.jfif";
 import alex from "../assets/profiles/alex_ling.png";
 import amanda from "../assets/profiles/amanda.png";
 import anurdha from "../assets/profiles/anu.jfif";
+import camelia from "../assets/profiles/Camelia_Betancourt.jpeg";
+import diya from "../assets/profiles/diya.jpg";
+import gaspard from "../assets/profiles/Gaspard_Etienne .jpeg";
+import michael from "../assets/profiles/ichael.jfif";
+import jonathan from "../assets/profiles/joBROW.jfif";
+import kari from "../assets/profiles/Kari_Everson.jpeg";
+import krishna from "../assets/profiles/Krishna.jpg";
 import lorie from "../assets/profiles/lorie.PNG";
+import mike from "../assets/profiles/Mike.jfif";
+import peter from "../assets/profiles/Peter.jfif";
+import rachael from "../assets/profiles/Rachael_Dier.jpeg";
+import ryan from "../assets/profiles/ryannnnn.jfif";
+import savannah from "../assets/profiles/SavannahMajarwitz.PNG";
+import sherri from "../assets/profiles/sherri.jfif";
 import spoorthy from "../assets/profiles/Spoorthy Balasubrahmanya.jfif";
 import varun from "../assets/profiles/varun.jfif";
-import krishna from "../assets/profiles/Krishna.jpg";
-import ryan from "../assets/profiles/ryannnnn.jfif";
 
 export const leaders = [
   {
