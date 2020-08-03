@@ -148,8 +148,9 @@ export const MinimizeWebChat = () => {
                     className={`${styles.chatBox} ${
                         minimized ? styles.hide : ""
                         } h-50 w-50`}
+                        tabIndex="0"
                 >
-                    <header className={`${styles.chatHeader} text-light `}>
+                    <header className={`${styles.chatHeader} text-light `} >
                         <h1 className={styles.title}>CORAbot Chat</h1>
                         <Button
                             as="span"
@@ -157,7 +158,7 @@ export const MinimizeWebChat = () => {
                             onClick={handleMinimizeButtonClick}
                         >
                             _
-            </Button>
+                        </Button>
                     </header>
                     <WebChat
                         className="react-web-chat"

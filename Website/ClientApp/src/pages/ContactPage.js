@@ -43,10 +43,10 @@ export const ContactPage = () => {
           <Col sm={12} xl={6} className={styles.colImageWrapper} style={{
             'backgroundImage': `url(${crowdImage})`
           }}>
-            <Image className={styles.colImage} src={crowdImage}/>
+            <Image className={styles.colImage} src={crowdImage} alt={""} />
           </Col>
           <Col sm={12} xl={6} className={` p-5`}>
-            <h2 className={styles.colFormHeader}>Contact Us</h2>
+            <h1 className={styles.colFormHeader}>Contact Us</h1>
             <Form onSubmit={handleSubmit(contact)}>
               <Form.Group controlId="firstName">
                 <Form.Control
@@ -54,6 +54,7 @@ export const ContactPage = () => {
                   ref={register({ required: true, minLength: 1 })}
                   type="text"
                   placeholder="First Name"
+                  aria-label="First Name"
                 />
               </Form.Group>
               <Form.Group controlId="lastName">
@@ -62,6 +63,7 @@ export const ContactPage = () => {
                   ref={register({ required: true, minLength: 1 })}
                   type="text"
                   placeholder="Last Name"
+                  aria-label="Last Name"
                 />
               </Form.Group>
               <Form.Group controlId="email">
@@ -70,6 +72,7 @@ export const ContactPage = () => {
                   ref={register({ required: true, minLength: 1 })}
                   type="email"
                   placeholder="Email"
+                  aria-label="Email Address"
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -79,6 +82,7 @@ export const ContactPage = () => {
                   as="textarea"
                   rows="6"
                   placeholder="Message"
+                  aria-label="Message"
                 />
               </Form.Group>
               <Button variant="primary" block type="submit">

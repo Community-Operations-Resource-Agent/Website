@@ -23,7 +23,7 @@ export const AppBar = () => {
       expand="lg"
     >
       <Navbar.Brand as={NavLink} to="/home" className="ml-3">
-        <Image src={logo} className={styles.logo} alt="CORAbot logo" />
+        <Image src={logo} className={styles.logo} alt="CORAbot Home" />
       </Navbar.Brand>
       <Navbar.Toggle></Navbar.Toggle>
       <Navbar.Collapse className={styles.nav}>

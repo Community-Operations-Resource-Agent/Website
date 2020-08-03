@@ -5,7 +5,12 @@ export const Profile = ({ image, name }) => {
   return (
     <div className="text-center m-auto">
       <Figure>
-        <Figure.Image className={styles.profile} roundedCircle src={image} />
+        <Figure.Image 
+          className={styles.profile} 
+          roundedCircle 
+          src={image}
+          alt={`Picture of ${name}`}
+        />
         <Figure.Caption>{name}</Figure.Caption>
       </Figure>
     </div>

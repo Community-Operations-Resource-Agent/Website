@@ -35,7 +35,7 @@ export const Footer = () => {
     { to: '/', text: 'About CORAbot' },
     { to: '/', text: 'Hack For COVID-19' },
     { to: '/', text: 'Hack For Good' },
-    { to: '/', text: 'Contact Us' }
+    { to: '/contact', text: 'Contact Us' }
   ]
 
   return (
@@ -78,17 +78,17 @@ export const Footer = () => {
           </Col>
           <Col xs={12} lg={6} className={styles.footerFormCol}>
             <Form onSubmit={handleSubmit(subscribe)}>
-              <Form.Group controlId="" className={styles.footerFormGroup}>
-                <Form.Label>Sign up for CORAbot Emails</Form.Label>
+              <Form.Group controlId="EmailSignup" className={styles.footerFormGroup}>
+                <Form.Label for="EmailSignup">Sign up for CORAbot Emails</Form.Label>
                 <InputGroup className="mr-sm-2">
                   <Form.Control
                     ref={register({ required: true, minLength: 1 })}
-                    name="Email"
+                    name="EmailSignup"
                     type="email"
                     placeholder="Email"
                   />
                   <InputGroup.Append>
-                    <Button type="submit">{">"}</Button>
+                    <Button type="submit" aria-label="Submit Email Sign up">{">"}</Button>
                   </InputGroup.Append>
                 </InputGroup>
                 {errors.email && <span>This field is required</span>}

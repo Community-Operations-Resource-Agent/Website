@@ -1,6 +1,7 @@
-.section {
-  width: 100%;
+.section { /* parent has 15px l-r margins; width, margin-left to force 100vw */
   padding: 40px 15%;
+  width: calc(100% + 30px); 
+  margin-left: -15px;
 }
 
 .section h1 {
@@ -9,17 +10,17 @@
   font-weight: bold;
 }
 
-.section h2 {
+.section p {
   font-size: 15px;
   padding: 1em 0;
 }
 
-.normal {
+.normal { /* normal version is white title/subtitle on blue bg */
   background: var(--color-primary);
   color: white;
 }
 
-.invert {
+.invert { /* inverted version is blue title, black subtitle on white bg */
   background: white;
   color: black;
 }

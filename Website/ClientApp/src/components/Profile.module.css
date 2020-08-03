@@ -4,6 +4,7 @@
   width: 100vw;
 }
 .profile {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* force 1:1 aspect ratio, crops extra */
 }

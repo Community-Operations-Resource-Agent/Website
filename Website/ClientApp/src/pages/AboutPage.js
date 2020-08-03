@@ -50,6 +50,7 @@ export const AboutPage = () => {
                     });
                   }
                 }}
+                aria-expanded={member.id === index}
               >
                 Profile
               </Button>
@@ -62,15 +63,16 @@ export const AboutPage = () => {
             setMember({});
           }}
           className={styles.collapsible}
+          aria-hidden={!open}
         >
           <div> {/* need an unpadded div to have smooth transition */}
             <div className={styles.collapsibleWrapper}>
               <Figure className={styles.collapsibleFigure}>
-                <Figure.Image roundedCircle src={member.image} />
+                <Figure.Image roundedCircle src={member.image} alt={member.name ?? ""} />
                 <Figure.Caption>{member.name}</Figure.Caption>
               </Figure>
               <p>{member.description}</p>
-              <Button as={Link} to={member.profile}></Button>
+              {(member.profile != undefined) ? <Button as={Link} to={member.profile}>Linkedin</Button> : <></>}
             </div>
           </div>
         </Collapse>
@@ -106,7 +108,7 @@ export const AboutPage = () => {
     return (
       <div>
         <Row className={`${(bar === 'left') ? styles.titleBarLeft : styles.titleBarRight} h2`}>
-          <span className={styles.title}>{title}</span>
+          <h2 className={styles.title}>{title}</h2>
         </Row>
         {profiles
           .reduce((r, member, index) => {
@@ -129,17 +131,17 @@ export const AboutPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <PageHeading
-        title={'Meet The People Behind CORAbot'}
-        subtitle={'Project CORA’s team consists of volunteers from Microsoft as well as industry professionals '
-          + 'and students from Boston University, Iowa State University, and Texas A&M. During the Microsoft '
-          + 'Hackathon for COVID-19, the team originally created Project CORA to provide relief efforts. '
-          + 'However, it was quickly realized the solution could be repurposed for any NGO or community cause '
-          + 'that supports underrepresented communities. In preparation for the upcoming Microsoft Hack for '
-          + 'Good, our team hopes to partner with nonprofit organizations directly and extend CORAbot to their '
-          + 'specific cause.'}
-      />
       <Container fluid as="main">
+        <PageHeading
+          title={'Meet The People Behind CORAbot'}
+          subtitle={'Project CORA’s team consists of volunteers from Microsoft as well as industry professionals '
+            + 'and students from Boston University, Iowa State University, and Texas A&M. During the Microsoft '
+            + 'Hackathon for COVID-19, the team originally created Project CORA to provide relief efforts. '
+            + 'However, it was quickly realized the solution could be repurposed for any NGO or community cause '
+            + 'that supports underrepresented communities. In preparation for the upcoming Microsoft Hack for '
+            + 'Good, our team hopes to partner with nonprofit organizations directly and extend CORAbot to their '
+            + 'specific cause.'}
+        />
         <ProfileSection title={'Leadership'} profiles={leaders} />
         <ProfileSection title={'Core Team'} profiles={members} bar={'left'} />
         <ProfileSection title={'Advisors'} profiles={advisors} />

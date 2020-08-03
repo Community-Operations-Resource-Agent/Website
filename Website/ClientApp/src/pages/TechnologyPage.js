@@ -16,6 +16,21 @@ export const TechnologyPage = () => {
     const [activeIndex, setIndex] = useState(-1);
     const [open, setOpen] = useState(false);
 
+    const toggleCollapse = (index) => {
+      if (activeIndex === index) {
+        setOpen(false);
+      } else if (activeIndex === -1) {
+        setIndex(index);
+        setOpen(true);
+      } else {
+        setOpen(false);
+        new Promise(resolve => setTimeout(resolve, 600)).then(() => {
+          setIndex(index);
+          setOpen(true);
+        });
+      }
+    }
+
     return (
       <>
         <Row className={styles.stackRow}>
@@ -23,19 +38,16 @@ export const TechnologyPage = () => {
             <Col 
               key={index} 
               onClick={() => {
-                if (activeIndex === index) {
-                  setOpen(false);
-                } else if (activeIndex === -1) {
-                  setIndex(index);
-                  setOpen(true);
-                } else {
-                  setOpen(false);
-                  new Promise(resolve => setTimeout(resolve, 600)).then(() => {
-                    setIndex(index);
-                    setOpen(true);
-                  });
+                toggleCollapse(index);
+              }}
+              onKeyDown={(e) => {
+                if (e.keyCode === 13 || e.keyCode === 32) { // enter or space key
+                  toggleCollapse(index);
                 }
               }}
+              tabindex={0}
+              role={"button"}
+              aria-expanded={index === activeIndex}
             >
               <span className={styles.stackIcon} style={{'background': element.color}}>
                 {element.icon}
@@ -49,6 +61,7 @@ export const TechnologyPage = () => {
         <Collapse 
           in={open}
           onExited={() => setIndex(-1)}
+          aria-hidden={!open}
         >
           <div>
             <div className={styles.collapsibleWrapper}>
@@ -134,7 +147,7 @@ export const TechnologyPage = () => {
   const [isDesktop, setIsDesktop] = useState(window.matchMedia("(min-width:1025px)").matches);
 
   useEffect(() => {
-    
+
     const isTabletPortraitHandler = (e) => setIsTabletPortrait(e.matches);
     const isTabletLandscapeHandler = (e) => setIsTabletLandscape(e.matches);
     const isDesktopHandler = (e) => setIsDesktop(e.matches);
@@ -161,16 +174,16 @@ export const TechnologyPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <PageHeading 
-        title={'The Technology Behind CORAbot'}
-        subtitle={'CORAbot was built using MS Bot Framework, with Twilio integration, supported by '
-          + 'Cosmos DB and Dynamics backend services. With triggers, the solution can instantly '
-          + ' match resource providers with the nearest person in need. CORAbot can also be plugged' 
-          + 'into pre-existing web-based applications such as Microsoft Teams or Dynamics via '
-          + 'connectors built by the Project CORA team.'}
-        invert
-      />
       <Container fluid as="main">
+        <PageHeading 
+          title={'The Technology Behind CORAbot'}
+          subtitle={'CORAbot was built using MS Bot Framework, with Twilio integration, supported by '
+            + 'Cosmos DB and Dynamics backend services. With triggers, the solution can instantly '
+            + 'match resource providers with the nearest person in need. CORAbot can also be plugged ' 
+            + 'into pre-existing web-based applications such as Microsoft Teams or Dynamics via '
+            + 'connectors built by the Project CORA team.'}
+          invert
+        />
         {stack
           .reduce((r, item, index) => {
             // create element groups with size of groupSize, result looks like:
