@@ -8,7 +8,7 @@ export const LandingPage = () => {
   return (
     <>
       <Image className={styles.fullImage} src={landingGIF} />
-      <Link to="/home" className={styles.homeLink}></Link>
+      <Link to='/home' className={styles.homeLink}></Link>
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./PageHeading.module.css";
 
 export const PageHeading = ({ title, subtitle, invert = false }) => {
@@ -9,4 +8,4 @@ export const PageHeading = ({ title, subtitle, invert = false }) => {
       <p>{subtitle}</p>
     </header>
   );
-}
+};

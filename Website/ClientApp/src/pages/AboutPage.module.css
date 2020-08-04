@@ -1,63 +1,63 @@
-.intro{
-  background: var(--color-primary);
+.intro {
+    background: var(--color-primary);
 }
+
 .titleBarLeft,
 .titleBarRight {
-  color: var(--color-primary);
-  align-items: center;
+    color: var(--color-primary);
+    align-items: center;
 }
 
 .title {
-  margin: 5%;
+    margin: 5%;
 }
 
 .titleBarRight::before,
-.titleBarLeft::after{
-  content: " ";
-  display: block;
-  flex:auto;
-  height: 0px;
-  background: var(--color-primary);
-
+.titleBarLeft::after {
+    content: " ";
+    display: block;
+    flex: auto;
+    height: 0px;
+    background: var(--color-primary);
 }
 
 .titleBarLeft::before,
 .titleBarRight::after {
-  content: " ";
-  display: block;
-  flex:auto;
-  height: 1px;
-  background: var(--color-primary);
+    content: " ";
+    display: block;
+    flex: auto;
+    height: 1px;
+    background: var(--color-primary);
 }
 
-.profileRow {
-  padding-bottom: 2rem;
+.profile {
+    padding-bottom: 2rem;
 }
 
 .activeProfile {
-  /* keeping empty until styling for active profile is needed */
-  /* background: var(--color-primary); */
+    padding-bottom: 2rem;
+    background: rgba(4, 191, 216, 0.07);
 }
 
 .collapsible {
-  background: rgba(4, 191, 216, 0.07);
-  margin: 0 -15px 2rem;
+    background: rgba(4, 191, 216, 0.07);
+    margin: 0 -15px;
 }
 
 .collapsibleWrapper {
-  padding: 10vh 10vw;
+    padding: 10vh 10vw;
 }
 
 .collapsibleFigure img {
-  border: 20px solid hsl(204, 100%, 70%);
-  box-shadow: 0 0 0 20px lightblue;
-  height: 200px;
-  width: 200px;
-  object-fit: cover; /* forcing 1:1 aspect ratio */
+    border: 20px solid hsl(204, 100%, 70%);
+    box-shadow: 0 0 0 20px lightblue;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
 }
 
 .collapsibleFigure figcaption {
-  margin-top: 30px;
-  font-weight: bold;
-  color: black;
+    margin-top: 30px;
+    font-weight: bold;
+    color: black;
 }

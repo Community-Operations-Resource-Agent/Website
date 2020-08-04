@@ -3,8 +3,9 @@
   left: 0;
   width: 100vw;
 }
-.profile {
-  width: 100px;
-  height: 100px;
-  object-fit: cover; /* force 1:1 aspect ratio, crops extra */
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }

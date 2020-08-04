@@ -1,0 +1,152 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.gridContainer {
+    flex: 0 1 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    max-width: 100%;
+    max-height: 100%;
+    gap: 1% 1%;
+    z-index: 0;
+}
+
+.topBar {
+    background-color: var(--color-primary);
+    grid-area: 3 / 1 / 5 / 10;
+    justify-self: start;
+    z-index: 1;
+}
+
+.info {
+    background-color: var(--color-secondary);
+    grid-area: 5 / 1 / 8 / 8;
+    justify-self: start;
+    z-index: 1;
+}
+
+.map {
+    grid-area: 1 / 1 / 25 / 13;
+    z-index: 0;
+}
+
+.locations {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: var(--color-primary);
+    overflow: auto;
+    z-index: 1;
+    grid-area: 15 / 1 / 25 / 13;
+    justify-self: center;
+}
+
+.filter {
+    grid-area: 1/ 1 / 2 / 2;
+}
+
+.places {
+    grid-area: 2 / 1 / 11 / 2;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+    .places::-webkit-scrollbar {
+        width: 11px;
+    }
+
+    .places::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
+    }
+
+    .places::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbarBG);
+    }
+
+.contactCora {
+    background-color: var(--color-secondary);
+    grid-area: 5/ 10 / 8 / 13;
+    z-index: 1;
+}
+
+.anon {
+    grid-area: 5/ 10 / 8 / 13;
+    background-color: var(--color-primary);
+}
+
+/* Tablet grid */
+@media (min-width: 768px) {
+    .topBar {
+        grid-area: 4 / 1 / 5 / 5;
+    }
+
+    .info {
+        grid-area: 6 / 1 / 10 / 4;
+        justify-self: stretch;
+    }
+
+    .map {
+        grid-area: 1 / 1 / 25 / 13;
+    }
+
+    .locations {
+        grid-area: 10 / 1 / 25 / 4;
+        justify-self: stretch;
+    }
+
+    .filter {
+        grid-area: 1/ 1 / 2 / 2;
+    }
+
+    .places {
+        grid-area: 2 / 1 / 11 / 2;
+    }
+
+    .contactCora {
+        grid-area: 23/ 11 / 24 / 13;
+    }
+
+    .anon {
+        grid-area: 23/ 4 / 24 / 10;
+    }
+}
+
+/* laptop and up grid */
+@media (min-width: 992px) {
+    .locations {
+        grid-area: 10 / 1 / 24 / 3;
+    }
+
+    .filter {
+        grid-area: 1/ 1 / 2 / 2;
+    }
+
+    .places {
+        grid-area: 2 / 1 / 11 / 2;
+    }
+
+    .info {
+        grid-area: 6 / 1 / 10 / 3;
+    }
+
+    .topBar {
+        grid-area: 4 / 1 / 5 / 5;
+    }
+
+    .map {
+        grid-area: 1 / 1 / 25 / 13;
+    }
+
+    .contactCora {
+        grid-area: 23/ 11 / 24 / 13;
+    }
+}

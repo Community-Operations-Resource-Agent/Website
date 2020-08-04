@@ -1,52 +1,51 @@
 .activeProfile {
-  background: var(--color-primary);
+    background: var(--color-primary);
 }
 
 .collapsible {
-  background: rgba(4, 191, 216, 0.07);
-  margin: 0 -15px;
+    background: rgba(4, 191, 216, 0.07);
+    margin: 0 -15px;
 }
 
 .collapsibleWrapper {
-  padding: 10vh 10vw;
+    padding: 10vh 10vw;
 }
 
 .collapsibleFigure img {
-  border: 20px solid hsl(204, 100%, 70%);
-  box-shadow: 0 0 0 20px lightblue;
+    border: 20px solid hsl(204, 100%, 70%);
+    box-shadow: 0 0 0 20px lightblue;
 }
 
 .collapsibleFigure figcaption {
-  margin-top: 30px;
-  font-weight: bold;
-  color: black;
+    margin-top: 30px;
+    font-weight: bold;
+    color: black;
 }
 
 .titleBarLeft,
 .titleBarRight {
-  color: var(--color-primary);
-  align-items: center;
+    color: var(--color-primary);
+    align-items: center;
 }
 
-.title{
-  margin: 5%;
+.title {
+    margin: 5%;
 }
 
 .titleBarRight::before,
-.titleBarLeft::after{
-  content: " ";
-  display: block;
-  flex:auto;
-  height: 0px;
-  background: var(--color-primary);
-
+.titleBarLeft::after {
+    content: " ";
+    display: block;
+    flex: auto;
+    height: 0px;
+    background: var(--color-primary);
 }
 
 .titleBarLeft::before,
 .titleBarRight::after {
-  content: " ";
-  display: block;
-  flex:auto;
-  height: 1px;
-  background: var(--color-primary);
+    content: " ";
+    display: block;
+    flex: auto;
+    height: 1px;
+    background: var(--color-primary);
 }

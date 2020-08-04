@@ -1,126 +1,126 @@
 .banner {
-  color: white;
-  justify-content: center;
-  padding: 20% 50% 5em 3%;
-  text-align: left;
-  background: #0A1624;
-  background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: left 200% top -5%;
-  display: block;
+    color: white;
+    justify-content: center;
+    padding: 20% 50% 5em 3%;
+    text-align: left;
+    background: #0A1624;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: left 200% top -5%;
+    display: block;
 }
 
-.banner h1 {
-  font-size: 40px;
-  font-weight: bold;
-  line-height: 35px;
-  width: 100%;
-  margin-bottom: 1em;
-}
+    .banner h1 {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 35px;
+        width: 100%;
+        margin-bottom: 1em;
+    }
 
-.banner p {
-  font-size: 20px;
-  line-height: 25px;
-}
+    .banner p {
+        font-size: 20px;
+        line-height: 25px;
+    }
 
 .hero {
-  flex:auto;
+    flex: auto;
 }
 
 .meetCora {
-  background: #0a1624;
+    background: #0a1624;
 }
 
 .map {
-  background: rgba(10, 22, 36, 0.7);
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
-  background-position: -2% 50%;
-  background-size: 450%;
+    background: rgba(10, 22, 36, 0.7);
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-position: -2% 50%;
+    background-size: 450%;
 }
 
 .colText {
-  color: white;
-  text-align: left;
+    color: white;
+    text-align: left;
 }
 
-.colText > div {
-  padding: 20% 20%;
-}
+    .colText > div {
+        padding: 20% 20%;
+    }
 
-.colText h2 {
-  font-size: 30px;
-  margin-bottom: 1em;
-}
+    .colText h2 {
+        font-size: 30px;
+        margin-bottom: 1em;
+    }
 
 @media (min-width:320px) {
-  .banner {
-    padding: 3em 10% 5em 10%;
-    text-align: center;
-    background-size: 0;
-  }
+    .banner {
+        padding: 3em 10% 5em 10%;
+        text-align: center;
+        background-size: 0;
+    }
 
-  .banner h1 {
-    font-size: 20px;
-  }
+        .banner h1 {
+            font-size: 20px;
+        }
 
-  .banner p {
-    font-size: 10px;
-    line-height: 13px;
-  }
+        .banner p {
+            font-size: 10px;
+            line-height: 13px;
+        }
 
-  .colText {
-    height: 70vh;
-  }
-  
-  .colText h2 {
-    font-size: 20px;
-  }
+    .colText {
+        height: 70vh;
+    }
+
+        .colText h2 {
+            font-size: 20px;
+        }
 }
 
 /* @media (min-width:1025px) { */
 /* @media (min-width:961px)  { */
-@media (min-width:481px)  {
-  .banner {
-    padding: 20% 50% 5em 3%;
-    text-align: left;
-    height: auto;
-    background-size: 70%;
-    background-position: left 200% top -5%;
-  }
+@media (min-width:481px) {
+    .banner {
+        padding: 20% 50% 5em 3%;
+        text-align: left;
+        height: auto;
+        background-size: 70%;
+        background-position: left 200% top -5%;
+    }
 
-  .banner h1 {
-    font-size: 40px;
-  }
+        .banner h1 {
+            font-size: 40px;
+        }
 
-  .banner p {
-    font-size: 20px;
-    line-height: 25px;
-  }
+        .banner p {
+            font-size: 20px;
+            line-height: 25px;
+        }
 
-  .colText {
-    height: auto;
-  }
+    .colText {
+        height: auto;
+    }
 
-  .colText h2 {
-    font-size: 30px;
-  }
+        .colText h2 {
+            font-size: 30px;
+        }
 }
 
 .colImage {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .colImageWrapper {
-  background: rgba(4, 191, 216, 0.3);
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    background: rgba(4, 191, 216, 0.3);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.colImageWrapper img {
-  opacity: 0;
-}
+    .colImageWrapper img {
+        opacity: 0;
+    }

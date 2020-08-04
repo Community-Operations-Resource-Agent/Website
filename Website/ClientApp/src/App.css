@@ -1,56 +1,62 @@
 #root {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  height: 100%;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .infobox-body {
-  background-color: var(--color-primary);
-  border-radius: 5%;
+    background-color: var(--color-primary);
+    border-radius: 5%;
 }
+
 .infobox-info > div {
-  color: white;
+    color: white;
 }
+
 .btn-outline-light:not(:disabled):not(.disabled):focus {
-  color: var(--color-primary);
-  background-color: white;
-  border-color: white;
+    color: var(--color-primary);
+    background-color: white;
+    border-color: white;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
+
 .backgroundPrimary {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
+
 .backgroundSecondary {
-  background-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
+
 .btn-primary {
-  background-color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
 }
+
 .btn-secondary {
-  background-color: var(--color-secondary) !important;
-  border-color: var(--color-secondary) !important;
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
 }
 
 .btn-light {
-  background-color: white !important;
-  border-color: white !important;
-  color: var(--color-primary);
+    background-color: white !important;
+    border-color: white !important;
+    color: var(--color-primary);
 }
 
 .text-primary {
-  color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
 }
 
-a { 
-  color: white;
+a {
+    color: white;
 }
 
 main {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
