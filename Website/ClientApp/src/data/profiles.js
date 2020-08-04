@@ -4,19 +4,22 @@ import anurdha from "../assets/profiles/anu.jfif";
 import camelia from "../assets/profiles/Camelia_Betancourt.jpeg";
 import diya from "../assets/profiles/diya.jpg";
 import gaspard from "../assets/profiles/Gaspard_Etienne .jpeg";
-import michael from "../assets/profiles/ichael.jfif";
+import michael from "../assets/profiles/Michael.jpg";
 import jonathan from "../assets/profiles/joBROW.jfif";
-import kari from "../assets/profiles/Kari_Everson.jpeg";
+import kari from "../assets/profiles/kari.jpe";
 import krishna from "../assets/profiles/Krishna.jpg";
 import lorie from "../assets/profiles/lorie.PNG";
 import mike from "../assets/profiles/Mike.jfif";
-import peter from "../assets/profiles/Peter.jfif";
-import rachael from "../assets/profiles/Rachael_Dier.jpeg";
+import peter from "../assets/profiles/Peter.jpg";
+import rachael from "../assets/profiles/rachael.jpg";
 import ryan from "../assets/profiles/ryannnnn.jfif";
-import savannah from "../assets/profiles/SavannahMajarwitz.PNG";
+import savannah from "../assets/profiles/rose.jpg";
 import sherri from "../assets/profiles/sherri.jfif";
 import spoorthy from "../assets/profiles/Spoorthy Balasubrahmanya.jfif";
 import varun from "../assets/profiles/varun.jfif";
+import brett from "../assets/profiles/brettRojas.JPG";
+import brandon from "../assets/profiles/Brandon Pek.jpg";
+import roger from "../assets/profiles/roger.jpg";
 
 export const leaders = [
   {
@@ -107,7 +110,7 @@ export const members = [
       "Ea ut fuga consectetur et. Voluptas ipsa voluptatem dolor. Nihil aut aut.",
   },
   {
-    name: "Amanda Ngyen",
+    name: "Amanda Nguyen",
     image: amanda,
     profile: "https://www.linkedin.com/in/amanda-nguyen-203b3a93",
     description:
@@ -124,6 +127,27 @@ export const members = [
     name: "Lorie Tais",
     image: lorie,
     profile: "https://www.linkedin.com/in/loredithjoyvallejotais/",
+    description:
+      "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
+  },
+  {
+    name: "Roger Best",
+    image: roger,
+    profile: "https://www.linkedin.com/in/roger-best-24a2631/",
+    description:
+      "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
+  },
+  {
+    name: "Brett Rojas",
+    image: brett,
+    profile: "https://www.linkedin.com/in/brettrojas/",
+    description:
+      "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
+  },
+  {
+    name: "Brandon Pek",
+    image: brandon,
+    profile: "https://www.linkedin.com/in/brandonpek",
     description:
       "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
   },
