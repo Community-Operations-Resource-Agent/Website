@@ -75,17 +75,17 @@ export const Footer = () => {
           </Col>
           <Col xs={12} lg={6} className={styles.footerFormCol}>
             <Form onSubmit={handleSubmit(subscribe)}>
-              <Form.Group controlId='' className={styles.footerFormGroup}>
-                <Form.Label>Sign up for CORAbot Emails</Form.Label>
-                <InputGroup className='mr-sm-2'>
+              <Form.Group controlId="EmailSignup" className={styles.footerFormGroup}>
+                <Form.Label htmlFor="EmailSignup">Sign up for CORAbot Emails</Form.Label>
+                <InputGroup className="mr-sm-2">
                   <Form.Control
                     ref={register({ required: true, minLength: 1 })}
-                    name='Email'
-                    type='email'
-                    placeholder='Email'
+                    name="EmailSignup"
+                    type="email"
+                    placeholder="Email"
                   />
                   <InputGroup.Append>
-                    <Button type='submit'>{">"}</Button>
+                    <Button type="submit" aria-label="Submit Email Sign up">{">"}</Button>
                   </InputGroup.Append>
                 </InputGroup>
                 {errors.email && <span>This field is required</span>}

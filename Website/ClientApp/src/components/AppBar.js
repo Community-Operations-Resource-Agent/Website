@@ -16,7 +16,8 @@ export const AppBar = () => {
       className='AppBar justify-content-between'
       as='header'
       collapseOnSelect
-      expand='lg'>
+      expand='lg'
+    >
       <Navbar.Brand as={NavLink} to='/home' className='ml-3'>
         <Logo className={styles.logo} title='CORAbot logo' alt='CORAbot logo' />
       </Navbar.Brand>

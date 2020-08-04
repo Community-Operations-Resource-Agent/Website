@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -13,6 +13,19 @@ import { Footer } from "../components/Footer";
 import styles from "./HomePage.module.css";
 
 export const HomePage = () => {
+
+  const [isDesktop, setIsDesktop] = useState(window.matchMedia("(min-width:961px)").matches);
+
+  useEffect(() => {
+    const isDesktopHandler = (e) => setIsDesktop(e.matches);
+
+    window.matchMedia("(min-width:961px)").addListener(isDesktopHandler);
+
+    return () => {
+      window.matchMedia("(min-width:961px)").removeListener(isDesktopHandler);
+    }
+  });
+
   return (
     <>
       <AppBar></AppBar>
@@ -33,12 +46,15 @@ export const HomePage = () => {
         </Row>
         <Row className={styles.hero}>
           <Col
-            className={`${styles.meetCora} ${styles.colText} d-none d-lg-flex p-0 flex-column justify-content-center`}
-            lg={6}>
+            className={`${(isDesktop) ? styles.meetCora : styles.colImageWrapper} ${styles.colText} p-0 d-flex flex-column justify-content-center`}
+            style={(isDesktop) ? {} : {'backgroundImage': `url('${jorge}')`}}
+            xs={12}
+            lg={6}
+          >
             <Container>
               <h2>Learn how CORAbot can be customized for any cause.</h2>
               <p>
-                <Button as={Link} to='/studies' variant='primary'>
+                <Button as={Link} to="/studies" variant="primary" aria-label="Learn about case studies">
                   Learn More
                 </Button>
               </p>
@@ -46,27 +62,19 @@ export const HomePage = () => {
           </Col>
           <Col
             className={`${styles.colImageWrapper} d-none d-lg-block p-0 h-100 w-100`}
-            style={{ backgroundImage: `url('${jorge}')` }}
-            lg={6}>
-            <Image className={styles.colImage} src={jorge} />
-          </Col>
-          <Col
-            className={`${styles.colText} ${styles.colImageWrapper} p-0 d-flex d-lg-none flex-column justify-content-center`}
-            style={{ backgroundImage: `url('${jorge}')` }}
-            xs={12}>
-            <Container>
-              <h2>Learn how CORAbot can be customized for any cause.</h2>
-              <p>
-                <Button as={Link} to='/studies' variant='primary'>
-                  Learn More
-                </Button>
-              </p>
-            </Container>
+            style={{'backgroundImage': `url('${jorge}')`}}
+            lg={6}
+          >
+            <Image className={styles.colImage} src={jorge} alt={""} />
           </Col>
         </Row>
         <Row className={styles.hero}>
-          <Col className='p-0 h-100' xs={{ span: 12, order: "last" }} lg={6}>
-            <Image className={styles.colImage} src={mapImage} />
+          <Col 
+            className="p-0 h-100"
+            xs={{ span: 12, order: "last" }}
+            lg={{ span: 6, order: "first" }}
+          >
+            <Image className={styles.colImage} src={mapImage} alt={""} />
           </Col>
           <Col
             className={`${styles.map} ${styles.colText} p-0 d-flex flex-column justify-content-center align-text`}
@@ -81,7 +89,7 @@ export const HomePage = () => {
                 resources.
               </h2>
               <p>
-                <Button as={Link} to='/map' variant='primary'>
+                <Button as={Link} to="/map" variant="primary" aria-label="View the map tool">
                   Learn More
                 </Button>
               </p>
@@ -89,7 +97,7 @@ export const HomePage = () => {
           </Col>
         </Row>
       </Container>
-      <Footer></Footer>
+      <Footer id="t"></Footer>
     </>
   );
 };

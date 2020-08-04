@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Accordion from "react-bootstrap/Accordion";
+import React, { useState, useEffect, useContext } from "react";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Accordion from "react-bootstrap/Accordion";
+import AccordionContext from 'react-bootstrap/AccordionContext';
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Symbol from "../assets/Symbol.svg";
 import { AppBar } from "../components/AppBar";
 import { Footer } from "../components/Footer";
@@ -48,7 +51,7 @@ export const CaseStudiesPage = () => {
             medications, and PPE. This results in dire situations for those most
             vulnerable in our communities.
           </p>
-          <h4>How does CORAbot help?</h4>
+          <h3>How does CORAbot help?</h3>
           <p>
             CORAbot connects volunteers already serving this international
             organization to those in need by scaling the organization’s
@@ -72,7 +75,7 @@ export const CaseStudiesPage = () => {
             what resources are going to be available to help these individuals
             escape their circumstances.
           </p>
-          <h4>How does CORAbot help?</h4>
+          <h3>How does CORAbot help?</h3>
           <p>
             CORAbot connects survivors with resources in their lcoal area. This
             virtual agent gathers accurate, real-time availability of human
@@ -86,26 +89,71 @@ export const CaseStudiesPage = () => {
     },
   ];
 
-  const renderMobile = () => (
-    <Accordion defaultActiveKey='0'>
-      {sections.map((section, index) => (
-        <Row className={styles.sectionMobile} key={index}>
-          <Accordion.Toggle as={"h3"} eventKey={`${index}`}>
-            {section.heading}
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey={`${index}`}>
-            {section.content()}
-          </Accordion.Collapse>
-        </Row>
-      ))}
-    </Accordion>
-  );
+  const renderMobile = () => {
+    
+    // Wrap Accordion.Toggle and Accordion.Collapse add aria-attributes
+    const Toggle = ({ children, eventKey, callback }) => {
+      const currentEventKey = useContext(AccordionContext);
+
+      const toggle = useAccordionToggle(
+        eventKey,
+        callback,
+        () => callback(eventKey)
+      );
+
+      const isCurrentEventKey = currentEventKey === eventKey;
+
+      return (
+        <h2 
+          onClick={toggle} 
+          onKeyDown={(e) => {
+            if (e.keyCode === 13 || e.keyCode === 32) { // enter or space key
+              toggle();
+            }
+          }}
+          tabindex="0"
+          aria-expanded={isCurrentEventKey}
+        >
+          {children}
+        </h2>
+      );
+    };
+
+    const Collapse = ({ children, eventKey }) => {
+      const currentEventKey = useContext(AccordionContext);
+      const isCurrentEventKey = currentEventKey === eventKey;
+      
+      return (
+        <Accordion.Collapse 
+          eventKey={eventKey}
+          aria-hidden={!isCurrentEventKey}
+        >
+          {children}
+        </Accordion.Collapse>
+      );
+    };
+
+    return (
+      <Accordion defaultActiveKey="0">
+        {sections.map((section, index) => (
+          <Row className={styles.sectionMobile} key={index}>
+            <Toggle eventKey={`${index}`}>
+              {section.heading}
+            </Toggle>
+            <Collapse eventKey={`${index}`}>
+              {section.content()}
+            </Collapse>
+          </Row>
+        ))}
+      </Accordion>
+    );
+  };
 
   const renderDesktop = () => (
     <React.Fragment>
       {sections.map((section, index) => (
         <Row className={styles.section} key={index}>
-          <h3>{section.heading}</h3>
+          <h2>{section.heading}</h2>
           {section.content()}
         </Row>
       ))}
@@ -128,28 +176,29 @@ export const CaseStudiesPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <PageHeading
-        title={"How has CORAbot helped the community?"}
-        subtitle={
-          "CORAbot can be repurposed to fit with any organization’s specific requirements."
-        }
-      />
-      <Container
-        fluid
-        as='main'
-        className={styles.main}
-        style={
-          isDesktop
-            ? {
-                backgroundImage: `url(${Symbol})`,
-              }
-            : {}
-        }>
-        {isDesktop ? renderDesktop() : renderMobile()}
-        <div className={styles.blurb}>
-          The widespread scalability of CORAbot will be housed in a Resource
-          Connector for Non-Profits where technology created will be generalized
-          and open sourced, ensuring easy access to all.
+      <Container fluid as="main">
+        <PageHeading
+          title={"How has CORAbot helped the community?"}
+          subtitle={
+            "CORAbot can be repurposed to fit with any organization’s specific requirements."
+          }
+        />
+        <div
+          className={styles.main}
+          style={
+            isDesktop
+              ? {
+                  backgroundImage: `url(${Symbol})`,
+                }
+              : {}
+          }
+        >
+          {(isDesktop) ? renderDesktop() : renderMobile()}
+        
+          <div className={styles.blurb}>
+            The widespread scalability of CORAbot will be housed in a Resource Connector for Non-Profits where 
+            technology created will be generalized and open sourced, ensuring easy access to all.
+          </div>
         </div>
       </Container>
       <Footer></Footer>
