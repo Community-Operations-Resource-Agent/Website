@@ -1,46 +1,75 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url('./assets/fonts/Helvetica.eot');
+    src: local('Helvetica'),
+        url('./assets/fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Helvetica.woff2') format('woff2'),
+        url('./assets/fonts/Helvetica.woff') format('woff'),
+        url('./assets/fonts/Helvetica.ttf') format('truetype'),
+        url('./assets/fonts/Helvetica.svg#Helvetica') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('./assets/fonts/Helvetica-Bold.eot');
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('./assets/fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Helvetica-Bold.woff') format('woff'),
+        url('./assets/fonts/Helvetica-Bold.ttf') format('truetype'),
+        url('./assets/fonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Collator';
+    src: url('./assets/fonts/Collator.eot');
+    src: local('Collator'),
+        url('./assets/fonts/Collator.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Collator.woff2') format('woff2'),
+        url('./assets/fonts/Collator.woff') format('woff'),
+        url('./assets/fonts/Collator.ttf') format('truetype'),
+        url('./assets/fonts/Collator.svg#Collator') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: "Helvetica", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 /* TODO: change the bootstrap colors to these and update styles accordingly  */
 html {
-    --color-primary: #04bfd8;
-    --color-secondary: #0a1624;
-    --text-primary: #ffffff;
-    --text-secondary: #97989c;
-    --scrollbarBG: #cfd8dc;
-    --thumbBG: #90a4ae;
+  --color-primary: #04bfd8;
+  --color-secondary: #0a1624;
+  --text-primary: #ffffff;
+  --text-secondary: #97989c;
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('./assets/Helvetica.eot');
-    src: url('./assets/Helvetica.eot?#iefix') format('embedded-opentype'), url('./assets/Helvetica.svg#Helvetica') format('svg'), url('./assets/Helvetica.ttf') format('truetype'), url('./assets/Helvetica.woff') format('woff'), url('./assets/Helvetica.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url('./assets/Helvetica-Bold.eot');
-    src: url('./assets/Helvetica-Bold.eot?#iefix') format('embedded-opentype'), url('./assets/Helvetica-Bold.svg#Helvetica-Bold') format('svg'), url('./assets/Helvetica-Bold.ttf') format('truetype'), url('./assets/Helvetica-Bold.woff') format('woff'), url('./assets/Helvetica-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

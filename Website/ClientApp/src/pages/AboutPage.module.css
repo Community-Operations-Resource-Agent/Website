@@ -49,8 +49,8 @@
 }
 
 .collapsibleFigure img {
-    border: 20px solid hsl(204, 100%, 70%);
-    box-shadow: 0 0 0 20px lightblue;
+    border: 20px solid #63cedf;
+    box-shadow: 0 0 0 20px #97dfe9;
     height: 150px;
     width: 150px;
     object-fit: cover;
