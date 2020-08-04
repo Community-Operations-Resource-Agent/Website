@@ -7,8 +7,8 @@
     text-align: left;
 }
 
-    .section h3,
-    .sectionMobile h3 {
+    .section h2,
+    .sectionMobile h2 {
         color: var(--color-primary);
         font-weight: bold;
         font-size: 25px;
@@ -16,27 +16,29 @@
         padding-bottom: 1em;
     }
 
-    .sectionMobile h3 {
+    .sectionMobile h2 {
         padding: 0.5em 0;
     }
 
-    .section h4,
-    .sectionMobile h4 {
+    .section h3,
+    .sectionMobile h3 {
         color: black;
         font-weight: bold;
         font-size: 1em;
         padding: 2em 0 1em 0;
     }
 
-.main {
+.main { /* parent has 15px l-r margins; width, margin-left to force 100vw width*/
     padding: 5% 10%;
     background-repeat: no-repeat;
+    margin-left: -15px;
+    width: calc(100% + 30px);
 }
 
 .blurb {
     color: var(--color-primary);
     font-size: 20px;
-    padding: 2em 0;
+    padding: 2vh;
 }
 
 @media (min-width:320px) {

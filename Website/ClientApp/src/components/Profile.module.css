@@ -1,4 +1,11 @@
+.info {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+}
+
 .profile img {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }

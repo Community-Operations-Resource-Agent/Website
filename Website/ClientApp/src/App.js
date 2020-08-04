@@ -27,9 +27,13 @@ import { CaseStudiesPage } from "./pages/CaseStudiesPage";
 //TODO: fix map grid
 //TODO: add tests
 //TODO: use semantic html and address accessability
+//TODO: Address contrast issue
+//TODO: Find fix for tabindex for uncollapsed items
+//TODO: create bypass block to skip nav/footer
 //TODO: build mobile view of pages
 //TODO: Decide on icons
 //TODO: Fill out About page with images and bios
+//TODO: Hack for COVID19, Hack For Good, About CORAbot links in footer
 
 export const App = () => {
   return (
