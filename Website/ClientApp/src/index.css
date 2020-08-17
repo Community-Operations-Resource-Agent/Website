@@ -62,7 +62,9 @@ body {
 /* TODO: change the bootstrap colors to these and update styles accordingly  */
 html {
   --color-primary: #04bfd8;
+  --primary:  #04bfd8 important!;
   --color-secondary: #0a1624;
+  --secondary:#0a1624;
   --text-primary: #ffffff;
   --text-secondary: #97989c;
   --scrollbarBG: #cfd8dc;
