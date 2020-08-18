@@ -140,7 +140,7 @@ export const AboutPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as="main">
+      <Container fluid as="main" id='main'>
         <PageHeading
           title={'Meet The People Behind CORAbot'}
           subtitle={

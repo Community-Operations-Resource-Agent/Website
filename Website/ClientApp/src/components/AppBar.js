@@ -4,10 +4,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import { ReactComponent as Logo } from "../assets/SimplifiedLogo.svg";
 import styles from "./AppBar.module.css";
 
 export const AppBar = () => {
+
+  // console.log(this.props);
+
   return (
     <Navbar
       variant='light'
@@ -21,6 +25,7 @@ export const AppBar = () => {
       <Navbar.Brand as={NavLink} to='/home' className='ml-3'>
         <Logo className={styles.logo} title='CORAbot logo' alt='CORAbot logo' />
       </Navbar.Brand>
+      <a href={`${window.location.pathname}#main`} id={styles.skipNav}>Skip to main content</a>
       <Navbar.Toggle></Navbar.Toggle>
       <Navbar.Collapse className={styles.nav}>
         <Nav>
