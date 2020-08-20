@@ -25,17 +25,19 @@ export const AboutPage = () => {
 
     return (
       <Col style={{'overflowX': 'visible'}} ref={ref}>
-        <Profile
-          name={profile.name}
-          image={profile.image}
-          profile={profile.profile}
-        />
-        <Button
-          onClick={callback}
-          aria-expanded={isOpen}
-        >
-          Profile
-        </Button>
+        <div className={`${(isOpen) ? styles.activeProfile : ''} ${styles.profile}`}>
+          <Profile
+            name={profile.name}
+            image={profile.image}
+            profile={profile.profile}
+          />
+          <Button
+            onClick={callback}
+            aria-expanded={isOpen}
+          >
+            Profile
+          </Button>
+        </div>
         <Collapse
           in={isOpen}
           className={styles.collapsible}
@@ -62,8 +64,6 @@ export const AboutPage = () => {
   }
 
   const ProfileRow = ({ profiles }) => {
-    const [member, setMember] = useState({});
-    const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(-1);
 
     return (
