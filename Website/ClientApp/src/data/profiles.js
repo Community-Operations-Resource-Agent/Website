@@ -1,58 +1,35 @@
-import alex from "../assets/profiles/alex_ling.png";
-import amanda from "../assets/profiles/amanda.png";
-import anurdha from "../assets/profiles/anu.jfif";
-import camelia from "../assets/profiles/Camelia_Betancourt.jpeg";
-import diya from "../assets/profiles/diya.jpg";
-import gaspard from "../assets/profiles/Gaspard_Etienne .jpeg";
-import michael from "../assets/profiles/Michael.jpg";
-import jonathan from "../assets/profiles/joBROW.jfif";
-import kari from "../assets/profiles/kari.jpe";
-import krishna from "../assets/profiles/Krishna.jpg";
-import lorie from "../assets/profiles/lorie.PNG";
-import mike from "../assets/profiles/Mike.jfif";
-import peter from "../assets/profiles/Peter.jpg";
-import rachael from "../assets/profiles/rachael.jpg";
-import ryan from "../assets/profiles/ryannnnn.jfif";
-import savannah from "../assets/profiles/rose.jpg";
-import sherri from "../assets/profiles/sherri.jfif";
-import spoorthy from "../assets/profiles/Spoorthy Balasubrahmanya.jfif";
-import varun from "../assets/profiles/varun.jfif";
-import brett from "../assets/profiles/brettRojas.JPG";
-import brandon from "../assets/profiles/Brandon Pek.jpg";
-import roger from "../assets/profiles/roger.jpg";
-
 export const leaders = [
   {
     name: "Jonathan Brown",
-    image: jonathan,
+    image: require("../assets/profiles/jonathan_brown.jfif"),
     profile: "https://www.linkedin.com/in/brown-jonathan/",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
   },
   {
     name: "Sherri Babylon-Crouse",
-    image: sherri,
+    image: require("../assets/profiles/sherri_babylon-crouse.jfif"),
     profile: "https://www.linkedin.com/in/babyloncrouse",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
   },
   {
     name: "Peter Hauge",
-    image: peter,
+    image: require("../assets/profiles/peter_hauge.jpg"),
     profile: "https://www.linkedin.com/in/peter-hauge-7678261",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
   },
   {
     name: "Mike McCarter",
-    image: mike,
+    image: require("../assets/profiles/mike_mccarter.jfif"),
     profile: "https://www.linkedin.com/in/mrmccarter/",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
   },
   {
     name: "Diya Sekhar",
-    image: diya,
+    image: require("../assets/profiles/diya_sekhar.jpg"),
     profile: "https://www.linkedin.com/in/vidyashaker",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
@@ -62,91 +39,91 @@ export const leaders = [
 export const members = [
   {
     name: "Camelia Betancourt",
-    image: camelia,
+    image: require("../assets/profiles/camelia_betancourt.jpeg"),
     profile: "https://www.linkedin.com/in/cameliabetancourt/",
     description:
       "Earum incidunt rerum minus eaque sunt voluptate aut dignissimos ipsam. Ut et et nihil voluptatum nesciunt officiis vel quia. Dolores doloribus voluptas tenetur officia magnam quo ab. Consectetur exercitationem velit tenetur quasi neque corrupti voluptatum officiis. Esse libero commodi atque laborum voluptatem qui. Deserunt et expedita molestiae eum ea.",
   },
   {
     name: "Rachael Dier",
-    image: rachael,
+    image: require("../assets/profiles/rachael_dier.jpg"),
     profile: "https://www.linkedin.com/in/rachaeldier",
     description:
       "Voluptas voluptatem et sit. Dolor dolorem omnis at vitae fugiat et ex et. Minus quod facere occaecati debitis rerum in delectus doloremque distinctio. Ut quidem quo et recusandae reiciendis et.",
   },
   {
     name: "Gaspard Etienne",
-    image: gaspard,
+    image: require("../assets/profiles/gaspard_etienne.jpeg"),
     profile: "https://www.linkedin.com/in/gaspardetienne",
     description:
       "Aut neque ipsum. Modi perferendis odio alias officiis qui numquam quo et. Autem odio ipsam aut facilis incidunt quia.",
   },
   {
     name: "Kari Everson",
-    image: kari,
+    image: require("../assets/profiles/kari_everson.jpeg"),
     profile: "https://www.linkedin.com/in/kari-everson-a6991b141",
     description:
       "Ipsa cumque qui. Numquam atque totam soluta earum voluptatibus dolore. Et repellendus ullam sapiente nam. Dolores at qui quo culpa quam nihil ea enim. Ipsum quis eaque qui impedit error voluptatem.",
   },
   {
     name: "Savannah Majarwitz",
-    image: savannah,
+    image: require("../assets/profiles/savannah_majarwitz.jpg"),
     profile: "www.linkedin.com/in/savannahmajarwitz",
     description:
       "Ut alias praesentium autem eveniet quasi consequatur. Et et fuga modi dolor saepe. Possimus omnis accusamus.",
   },
   {
     name: "Michael Mikesell",
-    image: michael,
+    image: require("../assets/profiles/michael_mikesell.jpg"),
     profile: "https://www.linkedin.com/in/michael-mikesell-a8893",
     description:
       "Sunt omnis est corrupti quas eos fugiat error sed. Adipisci et corrupti. Eum quos tempore autem est voluptatum doloremque ut ut. Perferendis debitis consequuntur consequuntur vitae.",
   },
   {
     name: "Alex Ling",
-    image: alex,
+    image: require("../assets/profiles/alex_ling.png"),
     profile: "https://www.linkedin.com/in/alexander-ling-6b8a28178/",
     description:
       "Ea ut fuga consectetur et. Voluptas ipsa voluptatem dolor. Nihil aut aut.",
   },
   {
     name: "Amanda Nguyen",
-    image: amanda,
+    image: require("../assets/profiles/amanda_nguyen.png"),
     profile: "https://www.linkedin.com/in/amanda-nguyen-203b3a93",
     description:
       "Sit consequuntur tempora sequi aperiam voluptatem reprehenderit nobis. Reprehenderit rerum consequatur consectetur commodi est id porro possimus. Cupiditate qui ut praesentium consectetur repellendus sed sunt quia sit. Magni et inventore ipsum laboriosam fugit rerum et velit aut. Repellat odio ea consectetur consectetur sunt aut sint sunt.",
   },
   {
     name: "Anurdha Saini",
-    image: anurdha,
+    image: require("../assets/profiles/anurdha_saini.jfif"),
     profile: "https://www.linkedin.com/in/sainianu08/",
     description:
       "Exercitationem explicabo quis repellat expedita libero et. Numquam omnis aut non blanditiis nesciunt voluptatem omnis nisi expedita. Sit enim quia officiis. Autem vel voluptatem. Accusantium fuga debitis ex cum at aut omnis beatae.",
   },
   {
     name: "Lorie Tais",
-    image: lorie,
+    image: require("../assets/profiles/lorie_tais.PNG"),
     profile: "https://www.linkedin.com/in/loredithjoyvallejotais/",
     description:
       "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
   },
   {
     name: "Roger Best",
-    image: roger,
+    image: require("../assets/profiles/roger_best.jpg"),
     profile: "https://www.linkedin.com/in/roger-best-24a2631/",
     description:
       "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
   },
   {
     name: "Brett Rojas",
-    image: brett,
+    image: require("../assets/profiles/brett_rojas.JPG"),
     profile: "https://www.linkedin.com/in/brettrojas/",
     description:
       "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
   },
   {
     name: "Brandon Pek",
-    image: brandon,
+    image: require("../assets/profiles/brandon_pek.jpg"),
     profile: "https://www.linkedin.com/in/brandonpek",
     description:
       "Molestiae officia numquam adipisci delectus dicta quia incidunt. Quia sunt sed quia et quibusdam odit. Harum et voluptatem facilis ipsum cupiditate et. Unde blanditiis nobis minima eius.",
@@ -155,28 +132,28 @@ export const members = [
 export const advisors = [
   {
     name: "Spoorthy Balasubrahmanya",
-    image: spoorthy,
+    image: require("../assets/profiles/spoorthy_balasubrahmanya.jfif"),
     profile: "https://www.linkedin.com/in/spoorthyb93",
     description:
       "Qui ut qui nam. Eius nihil occaecati odio ut illo similique atque voluptatem laudantium. Odio odio sequi voluptatibus.",
   },
   {
     name: "Varun Sharma",
-    image: varun,
+    image: require("../assets/profiles/varun_sharma.jfif"),
     profile: "https://www.linkedin.com/in/varun83",
     description:
       "Enim in officia velit harum voluptates nihil. Aut nihil porro consequatur error accusamus aut aliquid laboriosam. Veritatis nihil adipisci laborum neque esse ut sequi alias ea. Odio magni et occaecati sed est eum. Eligendi asperiores rerum saepe vero in aut minima.",
   },
   {
     name: "Krishna Sood",
-    image: krishna,
+    image: require("../assets/profiles/krishna_sood.jpg"),
     profile: "https://www.linkedin.com/in/krishnasood",
     description:
       "Repellat quis omnis quod debitis et et corporis est. Corporis laudantium nam saepe recusandae labore accusantium beatae sequi voluptas. Reprehenderit impedit quam molestiae itaque dolores quam.",
   },
   {
     name: "Ryan Volum",
-    image: ryan,
+    image: require("../assets/profiles/ryan_volum.jfif"),
     profile: "https://www.linkedin.com/in/ryan-volum-67959482/",
     description:
       "Et aut reiciendis deleniti rerum et id nisi eum. Placeat atque ratione. Aut illum dolorem est error quis sed assumenda voluptas. Similique optio illo voluptas est quia occaecati dolorem eos veritatis. Asperiores error iusto libero eveniet enim veniam consectetur aut explicabo. Voluptates maxime ad.",
