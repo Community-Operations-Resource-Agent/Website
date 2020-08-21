@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, ReactDOM } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Collapse from "react-bootstrap/Collapse";
@@ -21,7 +21,7 @@ export const AboutPage = () => {
 
     useEffect(() => {
       setLeftOffset(ref.current.getBoundingClientRect().left);
-    });
+    }, [ref]);
 
     return (
       <Col style={{'overflowX': 'visible'}} ref={ref}>
