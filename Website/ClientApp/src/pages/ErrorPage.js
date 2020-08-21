@@ -7,7 +7,7 @@ export const ErrorPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as='main'>
+      <Container fluid as='main' id='main'>
         <Row as='section'>
           <h1>Error 404: Page Not Found!</h1>
         </Row>

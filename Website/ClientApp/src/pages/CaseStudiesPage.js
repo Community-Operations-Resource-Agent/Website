@@ -176,7 +176,7 @@ export const CaseStudiesPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as="main">
+      <Container fluid as="main" id="main">
         <PageHeading
           title={"How has CORAbot helped the community?"}
           subtitle={

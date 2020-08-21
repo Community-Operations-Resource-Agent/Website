@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Collapse from "react-bootstrap/Collapse";
@@ -13,76 +13,83 @@ import { advisors, leaders, members } from "../data/profiles";
 import styles from "./AboutPage.module.css";
 
 export const AboutPage = () => {
-  const ProfileRow = ({ profiles }) => {
-    const [member, setMember] = useState({});
-    const [open, setOpen] = useState(false);
+  const ProfileCol = ({ profile, isOpen, callback }) => {
+
+    const [leftOffset, setLeftOffset] = useState(0);
+
+    const ref = useRef();
+
+    useEffect(() => {
+      setLeftOffset(ref.current.getBoundingClientRect().left);
+    }, [ref]);
 
     return (
-      <div>
-        <Row>
-          {profiles.map((profile, index) => (
-            <Col
-              key={index}
-              className={`${
-                member.id === index ? styles.activeProfile : styles.profile
-              } `}>
-              <Profile
-                name={profile.name}
-                image={profile.image}
-                profile={profile.profile}
-              />
-              <Button
-                onClick={() => {
-                  if (member.id === index) {
-                    // close when currently open if member clicked again
-                    setOpen(false);
-                  } else if (typeof member.id === "undefined") {
-                    // open when currently closed if member clicked
-                    setMember({ id: index, ...profile });
-                    setOpen(true);
-                  } else {
-                    // toggle when currently open if another member is clicked
-                    setOpen(false);
-                    // 600 ms delay to allow smooth close, possibly needs better implementation?
-                    new Promise((resolve) => setTimeout(resolve, 600)).then(
-                      () => {
-                        setMember({ id: index, ...profile });
-                        setOpen(true);
-                      }
-                    );
-                  }
-                }}
-                aria-expanded={member.id === index}
-              >
-                Profile
-              </Button>
-            </Col>
-          ))}
-        </Row>
+      <Col style={{'overflowX': 'visible'}} ref={ref}>
+        <div className={`${(isOpen) ? styles.activeProfile : ''} ${styles.profile}`}>
+          <Profile
+            name={profile.name}
+            image={profile.image}
+            profile={profile.profile}
+          />
+          <Button
+            onClick={callback}
+            aria-expanded={isOpen}
+          >
+            Profile
+          </Button>
+        </div>
         <Collapse
-          in={open}
-          onExited={() => {
-            setMember({});
-          }}
+          in={isOpen}
           className={styles.collapsible}
-          aria-hidden={!open}
+          aria-hidden={!isOpen}
+          style={{'marginLeft': `-${leftOffset + 15}px`}}
         >
           <div> {/* need an unpadded div to have smooth transition */}
             <div className={styles.collapsibleWrapper}>
               <Figure className={styles.collapsibleFigure}>
-                <Figure.Image roundedCircle src={member.image} alt={member.name ?? ""} />
-                <Figure.Caption>{member.name}</Figure.Caption>
+                <Figure.Image roundedCircle src={profile.image} alt={profile.name ?? ""} />
+                <Figure.Caption>{profile.name}</Figure.Caption>
               </Figure>
-              <p>{member.description}</p>
-              {member.profile && (
-                <Button href={member.profile} target='_blank'>
+              <p>{profile.description}</p>
+              {profile.profile && (
+                <Button href={profile.profile} target='_blank'>
                   LinkedIn Profile
                 </Button>
               )}
             </div>
           </div>
         </Collapse>
-      </div>
+      </Col>
+    );
+  }
+
+  const ProfileRow = ({ profiles }) => {
+    const [index, setIndex] = useState(-1);
+
+    return (
+      <Row>
+        {profiles.map((profile, i) => (
+          <ProfileCol
+            profile={profile}
+            isOpen={index === i}
+            callback={() => {
+              if (index === -1) {
+                setIndex(i);
+              } else if (index === i) {
+                setIndex(-1);
+              } else {
+                setIndex(-1);
+                new Promise((resolve) => setTimeout(resolve, 600)).then(
+                  () => {
+                    setIndex(i);
+                  }
+                );
+              }
+            }}
+          key={i}
+          />
+        ))}
+      </Row>
     );
   };
 
@@ -140,7 +147,7 @@ export const AboutPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as="main">
+      <Container fluid as="main" id='main'>
         <PageHeading
           title={'Meet The People Behind CORAbot'}
           subtitle={

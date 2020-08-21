@@ -31,7 +31,7 @@ export const ContactPage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as='main'>
+      <Container fluid as='main' id='main'>
         <Row as='section' className={`${styles.form} backgroundSecondary`}>
           {/*
            * Sets the div bg and adds blue color filter

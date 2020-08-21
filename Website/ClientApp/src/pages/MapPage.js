@@ -42,7 +42,7 @@ export const MapPage = () => {
     return (
         <div className={styles.pageContainer}>
             <AppBar></AppBar>
-            <div className={styles.gridContainer}>
+            <div className={styles.gridContainer} id='main'>
                 <Info></Info>
                 <LocationFilter
                     MicrosoftRef={MicrosoftRef}
