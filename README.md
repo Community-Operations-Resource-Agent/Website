@@ -1,4 +1,4 @@
-TIRA Website
+Corabot Website
 ==================
 
 ## Getting Started for Developers
