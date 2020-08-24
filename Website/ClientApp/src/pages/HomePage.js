@@ -29,7 +29,7 @@ export const HomePage = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Container fluid as='main'>
+      <Container fluid as='main' id='main'>
         <Row
           className={`${styles.hero} ${styles.banner}`}
           style={{

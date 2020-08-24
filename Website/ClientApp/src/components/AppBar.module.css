@@ -12,3 +12,16 @@
     text-transform: uppercase;
     font-size: 15px;
 }
+
+#skipNav {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    background: black;
+}
+
+#skipNav:focus {
+    height: auto;
+    width: auto;
+    padding: 5px;
+}
