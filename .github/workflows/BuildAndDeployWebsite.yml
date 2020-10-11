@@ -63,7 +63,8 @@ jobs:
       uses: Azure/webapps-deploy@v2
       with:
         # Name of the Azure Web App
-        app-name: ProjejctCoraBot
+        app-name: ProjectCoraBot
         publish-profile: ${{ secrets.PROJECTCORAWEBSITE_PUBLISHPROFILE }}
         # Applies to Web App only: Path to package or folder. *.zip, *.war, *.jar or a folder to deploy
         package: '${{ env.ZIP_OUTPUT_PATH }}'
+
