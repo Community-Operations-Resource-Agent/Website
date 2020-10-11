@@ -1,3 +1,5 @@
+![CI](https://github.com/Community-Operations-Resource-Agent/Website/workflows/CI/badge.svg?branch=master)
+
 Corabot Website
 ==================
 
