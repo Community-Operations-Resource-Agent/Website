@@ -38,12 +38,13 @@ namespace MapVisualization.Controllers
 
 
             var secret = configuration.GetSection("DIRECT_LINE_SECRET").Value;
+            var directLineURL = configuration.GetSection("DIRECT_LINE_URL").Value;
 
             HttpClient client = new HttpClient();
 
             HttpRequestMessage request = new HttpRequestMessage(
                 HttpMethod.Post,
-                $"https://directline.botframework.com/v3/directline/tokens/generate");
+                directLineURL);
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", secret);
 
