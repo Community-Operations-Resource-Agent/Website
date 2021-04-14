@@ -1,38 +1,100 @@
-.stackRow {
-    padding: 3% 13%;
+.heading {
+    background: #000;
+    color: #fff;
+    text-align: left;
 }
 
-.stackIcon {
-    border-radius: 20% 0 20% 0;
-    padding: 15px;
-    display: inline-block;
+.heading h1 {
+    color: #39ADC0;
+    font-size: 60px;
+    line-height: 70px;
+}
+
+.heading h2 {
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.heading p {
+    font-size: 28px;
+    line-height: 50px;
+}
+
+.heading img {
+    background: #0B2326;
+    border-radius: 20px;
+}
+
+.techImage {
+    background: #000;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.techImage .techImageWrapper {
+    margin: 8% 0 15% 0;
+    z-index: 1;
+}
+
+.techImage .techImageWrapper img {
+    border-radius: 15px;
+}
+
+.techImage .techImageBoxes {
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid #39ADC0;
+    width: 984px;
+    height: 500px;
+}
+
+.stackRow {
+    background: #0B2326;
+    border-radius: 20px;
 }
 
 .stackRow .stackIcon {
-    cursor: pointer;
+    background: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.stackName {
-    padding: 15px;
-    text-transform: uppercase;
-    font-size: 15px;
-    color: var(--color-primary);
+.stackRow .stackContent {
+    color: #fff;
+    text-align: left;
 }
 
-.collapsibleWrapper {
-    width: 100%;
-    padding: 4em 20%;
-    background: rgba(4, 191, 216, 0.07);
+.stackRow .stackContent .stackName {
+    font-size: 30px;
+    line-height: 50px;
 }
 
-    .collapsibleWrapper .stackIcon svg {
-        width: 80px;
-    }
+.stackRow .stackContent .stackDescription {
+    font-size: 20px;
+    line-height: 35px;
+}
 
-    .collapsibleWrapper .stackName {
-        font-weight: bold;
-        font-size: 25px;
-        line-height: 29px;
-        color: black;
-        text-transform: capitalize;
-    }
+.section-moving-forward {
+    text-align: left;
+    background: #F1FFFF;
+}
+
+.section-moving-forward p {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.section-scenarios {
+    text-align: left;
+    background: #F1FFFF;
+}
+
+.section-scenarios .scenarios-content {
+    padding: 20em 10% 20em;
+}
+
+.section-scenarios .scenarios-content p {
+    font-size: 28px;
+}

@@ -33,10 +33,10 @@ ul {
     background-color: var(--color-secondary);
 }
 
-.btn-primary {
+/* .btn-primary {
     background-color: var(--color-primary) !important;
     border-color: var(--color-primary) !important;
-}
+} */
 
 .btn-secondary {
     background-color: var(--color-secondary) !important;
